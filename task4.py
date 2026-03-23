@@ -10,7 +10,8 @@ first_half = [w.capitalize() for w in words[:half]]
 #друга половина: видаляємо всі розділові знаки всі літери маленькі + *
 second_half = []
 for w in words[half:]:
-    clean_word = w.strip(",.!?;:-()")
+    import string
+    clean_word = w.strip(string.punctuation)
     second_half.append(clean_word.lower() + "*")
 
 #формуємо новий рядок з символом "|" посередині
